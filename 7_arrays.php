@@ -5,7 +5,7 @@ $produtos = [
     ["nome" => "Camiseta", "preco" => 50.00, "quantidade" => 10],
     ["nome" => " Calça Jeans", "preco" => 100.00, "quantidade" => 5], 
     ["nome" => "Tênis", "preco" => 150.00, "quantidade" => 7],
-
+    ["nome" => "Moletom", "preco" => 120.00, "quantidade" => 9],
 ];
 
 // Exibe os produtos em formato de tabela
