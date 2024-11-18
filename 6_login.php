@@ -18,8 +18,29 @@
 
     <?php
 
-    // Digitar PHP (1º Aqui)
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        $nome = $_POST['nome'];
+        $senha = $_POST['senha'];
     
+        $arquivo = fopen('usuarios.txt', 'r');
+        $login_sucesso = false;
+
+        while(($linha = fgets($arquivo)) !== false){
+            list($usuario_arquivo, $senha_arquivo) = explode(';', trim($linha));
+
+        if($nome == $usuario_arquivo && $senha == $senha_arquivo){
+            $login_sucesso = true;
+            break;
+        }
+    }
+    fclose($arquivo);
+
+    if($login_sucesso){
+        echo "<h3>Login realizado com sucesso! Bem vindo $nome!</h3>";   
+    }else{
+        echo "<h3 style='color:red;'>Usuário ou senhas incorretos.</h3>";
+        }
+    }
     ?>
 </body>
 </html>
